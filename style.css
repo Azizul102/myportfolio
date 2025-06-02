@@ -24,6 +24,25 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
 }
+/* Smooth scrolling for the whole website */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* হেডার হাইট অনুযায়ী এডজাস্ট করুন */
+}
+
+/* মোবাইল মেনু খোলা অবস্থায় স্ক্রোল প্রতিরোধ */
+body.no-scroll {
+  overflow: hidden;
+}
+/* স্ক্রোলিং এনিমেশনের জন্য */
+@keyframes smoothScroll {
+    0% { transform: translateY(-10px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+section {
+    animation: smoothScroll 0.5s ease forwards;
+}
 
 /* Header Styles */
 header {
