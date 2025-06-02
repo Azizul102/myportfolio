@@ -1,569 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Azizul Hoque | Web Design & Marketing</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #4a6cf7;
-            --primary-dark: #3a59d9;
-            --secondary: #6a11cb;
-            --dark-bg: #121212;
-            --dark-card: #1e1e1e;
-            --dark-border: #333333;
-            --text: #ffffff;
-            --text-secondary: #b0b0b0;
-            --accent: #ff4d94;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: var(--dark-bg);
-            color: var(--text);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        
-        /* Header Styles */
-        header {
-            background: linear-gradient(135deg, var(--dark-card), var(--dark-bg));
-            padding: 1.5rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            border-bottom: 1px solid var(--dark-border);
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-        }
-        
-        .logo span {
-            color: var(--accent);
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 2rem;
-        }
-        
-        nav ul li a {
-            color: var(--text);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-            position: relative;
-            padding: 0.5rem 0;
-        }
-        
-        nav ul li a:hover {
-            color: var(--primary);
-        }
-        
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            transition: width 0.3s;
-        }
-        
-        nav ul li a:hover::after {
-            width: 100%;
-        }
-        
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 8rem 0 4rem;
-            background: radial-gradient(circle at top right, rgba(74, 108, 247, 0.1), transparent 40%),
-                        radial-gradient(circle at bottom left, rgba(106, 17, 203, 0.1), transparent 40%);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 3rem;
-        }
-        
-        .hero-text {
-            flex: 1;
-            animation: fadeInUp 1s ease-out;
-        }
-        
-        .hero-text h1 {
-            font-size: 3.5rem;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-        }
-        
-        .highlight {
-            color: var(--primary);
-            position: relative;
-            display: inline-block;
-        }
-        
-        .highlight::after {
-            content: '';
-            position: absolute;
-            bottom: 5px;
-            left: 0;
-            width: 100%;
-            height: 10px;
-            background: rgba(74, 108, 247, 0.2);
-            z-index: -1;
-        }
-        
-        .hero-text p {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            max-width: 600px;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-        
-        .btn {
-            padding: 0.9rem 2rem;
-            border-radius: 30px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s;
-            display: inline-block;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            box-shadow: 0 5px 15px rgba(74, 108, 247, 0.4);
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(74, 108, 247, 0.6);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: var(--text);
-            border: 2px solid var(--dark-border);
-        }
-        
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: var(--primary);
-        }
-        
-        .hero-image {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        .hero-image img {
-            max-width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-            border: 1px solid var(--dark-border);
-        }
-        
-        /* Services Section */
-        .services {
-            padding: 6rem 0;
-            background: var(--dark-bg);
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            border-radius: 2px;
-        }
-        
-        .section-title p {
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 1rem auto 0;
-        }
-        
-        .packages {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .package {
-            background: var(--dark-card);
-            border-radius: 15px;
-            padding: 2.5rem;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 1px solid var(--dark-border);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .package:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-            border-color: rgba(74, 108, 247, 0.3);
-        }
-        
-        .package.popular {
-            border: 2px solid var(--primary);
-            transform: scale(1.05);
-            z-index: 1;
-        }
-        
-        .package.popular::before {
-            content: 'MOST POPULAR';
-            position: absolute;
-            top: 20px;
-            right: -30px;
-            background: var(--primary);
-            color: white;
-            padding: 0.3rem 2rem;
-            transform: rotate(45deg);
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-        
-        .package h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-        
-        .price {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin: 1.5rem 0;
-            color: var(--text);
-        }
-        
-        .price span {
-            font-size: 1rem;
-            color: var(--text-secondary);
-        }
-        
-        .features {
-            list-style: none;
-            margin: 2rem 0;
-        }
-        
-        .features li {
-            padding: 0.7rem 0;
-            border-bottom: 1px solid var(--dark-border);
-            display: flex;
-            align-items: center;
-        }
-        
-        .features li:last-child {
-            border-bottom: none;
-        }
-        
-        .features li i {
-            color: var(--primary);
-            margin-right: 10px;
-            font-size: 0.9rem;
-        }
-        
-        /* CTA Section */
-        .cta-section {
-            padding: 6rem 0;
-            background: linear-gradient(135deg, rgba(74, 108, 247, 0.1), rgba(106, 17, 203, 0.1));
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cta-content {
-            max-width: 700px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .cta-content h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .cta-content p {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-        }
-        
-        /* Contact Section */
-        .contact {
-            padding: 6rem 0;
-        }
-        
-        .contact-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-        }
-        
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-        
-        .contact-item {
-            display: flex;
-            gap: 1rem;
-            align-items: flex-start;
-        }
-        
-        .contact-icon {
-            background: rgba(74, 108, 247, 0.1);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            font-size: 1.2rem;
-        }
-        
-        .contact-text h4 {
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
-        
-        .contact-text p, .contact-text a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .contact-text a:hover {
-            color: var(--primary);
-        }
-        
-        .contact-form {
-            background: var(--dark-card);
-            padding: 2.5rem;
-            border-radius: 15px;
-            border: 1px solid var(--dark-border);
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 0.9rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--dark-border);
-            border-radius: 8px;
-            color: var(--text);
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-        
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-        
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--dark-card);
-            padding: 3rem 0;
-            border-top: 1px solid var(--dark-border);
-        }
-        
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 45px;
-            height: 45px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 50%;
-            color: var(--text);
-            font-size: 1.2rem;
-            transition: all 0.3s;
-        }
-        
-        .social-links a:hover {
-            background: var(--primary);
-            transform: translateY(-5px);
-        }
-        
-        .copyright {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-        
-        /* Thank You Message */
-        .thank-you {
-            display: none;
-            text-align: center;
-            padding: 3rem;
-            background: var(--dark-card);
-            border-radius: 15px;
-            border: 1px solid var(--primary);
-        }
-        
-        .thank-you h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-        
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes float {
-            0% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-            100% {
-                transform: translateY(0px);
-            }
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .hero-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .hero-text {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .cta-buttons {
-                justify-content: center;
-            }
-            
-            .package.popular {
-                transform: scale(1);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-            }
-            
-            .hero-text h1 {
-                font-size: 2.5rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+    <title>Azizul Hoque | Web Design & Development</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+</head>
 </head>
 <body>
     <!-- Header -->
@@ -571,12 +15,17 @@
         <div class="container">
             <div class="header-content">
                 <a href="#" class="logo">Aziz<span>.</span></a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
                 <nav>
-                    <ul>
+                    <ul id="mainNav">
                         <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
                         <li><a href="#services">Services</a></li>
-                        <li><a href="#contact">Contact</a></li>
                         <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
                         <li><a href="#contact" class="btn btn-primary">Hire Me</a></li>
                     </ul>
                 </nav>
@@ -590,14 +39,301 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>Elevate Your <span class="highlight">Online Presence</span> With Premium Web Solutions</h1>
-                    <p>Professional web design and marketing services tailored for the US market. I create stunning, high-converting websites that drive results.</p>
+                    <p>Helping professionals build a strong online presence through conversion-focused web design. Ideal for medical, legal, and consulting practices.</p>
                     <div class="cta-buttons">
                         <a href="#services" class="btn btn-primary">Explore Services</a>
                         <a href="#contact" class="btn btn-secondary">Talk to Me</a>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=600&h=600&q=80" alt="Web Design Illustration">
+<div class="floating-icons-container">
+    <div class="floating-icons">
+        <!-- আইকন গুলি -->
+        <div class="icon-item" style="--x: 15%; --y: 25%; --delay: 0s;">
+            <i class="fas fa-user-md"></i>
+            <span class="icon-tooltip">Doctor Websites</span>
+        </div>
+        <div class="icon-item" style="--x: 85%; --y: 20%; --delay: 0.5s;">
+            <i class="fas fa-gavel"></i>
+            <span class="icon-tooltip">Law Firms</span>
+        </div>
+        <div class="icon-item" style="--x: 20%; --y: 65%; --delay: 1s;">
+            <i class="fas fa-briefcase"></i>
+            <span class="icon-tooltip">Business Sites</span>
+        </div>
+        <div class="icon-item" style="--x: 80%; --y: 60%; --delay: 1.5s;">
+            <i class="fas fa-search-dollar"></i>
+            <span class="icon-tooltip">SEO Services</span>
+        </div>
+        <div class="icon-item" style="--x: 50%; --y: 45%; --delay: 2s;">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="icon-tooltip">E-commerce</span>
+        </div>
+    </div>
+    
+    <!-- কার্ডটি আলাদা ডিভ হিসেবে -->
+    <div class="specialization-card-wrapper">
+        <div class="specialization-card">
+            <h3>I Specialize In:</h3>
+            <div class="specialization-items">
+                <span>Professional Websites</span>
+                <span>High-Converting Designs</span>
+                <span>SEO Optimization</span>
+            </div>
+        </div>
+    </div>
+</div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+                <p>Get to know the person behind the work</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://res.cloudinary.com/dqtsr6waw/image/upload/c_limit,h_600,w_500/e_sharpen/1000042309_1_quryrf" alt="Md Azizul Hoque">
+                </div>
+                <div class="about-text">
+                    <h3>Full Stack Web Developer & Designer</h3>
+                    <p>Hello! I'm Azizul Hoque, a passionate web developer and designer with expertise in creating modern, responsive websites and web applications. With years of experience in the industry, I help businesses establish their online presence with custom solutions.</p>
+                    <p>My approach combines technical excellence with creative design to deliver websites that not only look great but also perform exceptionally well across all devices.</p>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/azizi02" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.fb.com/mdazizulhoquenur" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="http://www.paradiseeacademy.com" target="_blank"><i class="fas fa-globe"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+                    <div class="download-cv">
+						<a href="cv.html" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+							<i class="fas fa-download"></i> Download My CV
+						</a>
+					</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Skills</h2>
+                <p>Technologies I work with to deliver exceptional results</p>
+            </div>
+            
+            <div class="skills-tabs">
+                <button class="tab-btn active" data-tab="frontend">Frontend</button>
+                <button class="tab-btn" data-tab="backend">Backend</button>
+                <button class="tab-btn" data-tab="database">Database</button>
+                <button class="tab-btn" data-tab="tools">Tools</button>
+            </div>
+            
+            <div class="tab-content active" id="frontend">
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <div class="skill-text">
+                            <h4>HTML5</h4>
+                            <p>Semantic markup, accessibility, SEO optimization</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fab fa-css3-alt"></i>
+                        </div>
+                        <div class="skill-text">
+                            <h4>CSS3</h4>
+                            <p>Responsive design, animations, Flexbox, Grid</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fab fa-js"></i>
+                        </div>
+                        <div class="skill-text">
+                            <h4>JavaScript</h4>
+                            <p>ES6+, DOM manipulation, async programming</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <div class="skill-text">
+                            <h4>React</h4>
+                            <p>Components, Hooks, Context API, Redux</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fab fa-bootstrap"></i>
+                        </div>
+                        <div class="skill-text">
+                            <h4>Bootstrap</h4>
+                            <p>Rapid prototyping, responsive utilities</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fas fa-wind"></i>
+                        </div>
+                        <div class="skill-text">
+                            <h4>Tailwind CSS</h4>
+                            <p>Utility-first CSS framework, customization</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="backend">
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fab fa-node-js"></i>
+                        </div>
+                        <div class="skill-text">
+                            <h4>Node.js</h4>
+                            <p>Server-side JavaScript, NPM ecosystem</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <div class="skill-text">
+                            <h4>Express.js</h4>
+                            <p>RESTful APIs, middleware, routing</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <div class="skill-text">
+                            <h4>Python</h4>
+                            <p>Scripting, automation, backend development</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <div class="skill-text">
+                            <h4>Firebase</h4>
+                            <p>Authentication, Firestore, Cloud Functions</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="skill-text">
+                            <h4>Authentication</h4>
+                            <p>JWT, OAuth, session management</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <div class="skill-text">
+                            <h4>API Integration</h4>
+                            <p>REST, GraphQL, third-party services</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="database">
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="skill-text">
+                            <h4>MongoDB</h4>
+                            <p>NoSQL database, Mongoose ODM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fas fa-table"></i>
+                        </div>
+                        <div class="skill-text">
+                            <h4>SQL</h4>
+                            <p>MySQL, PostgreSQL, database design</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fas fa-memory"></i>
+                        </div>
+                        <div class="skill-text">
+                            <h4>Redis</h4>
+                            <p>Caching, session storage</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="tools">
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fab fa-git-alt"></i>
+                        </div>
+                        <div class="skill-text">
+                            <h4>Git</h4>
+                            <p>Version control, GitHub, GitLab</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="skill-text">
+                            <h4>SEO</h4>
+                            <p>On-page optimization, analytics</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <div class="skill-text">
+                            <h4>UI/UX Design</h4>
+                            <p>Wireframing, prototyping, Figma</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="skill-text">
+                            <h4>Project Management</h4>
+                            <p>Agile, Scrum, Trello, Jira</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -615,10 +351,10 @@
                 <!-- Package 1 -->
                 <div class="package">
                     <h3>Starter</h3>
-                    <div class="price">$999 <span>/ one-time</span></div>
+                    <div class="price">$299 <span>/ one-time</span></div>
                     <p>Perfect for small businesses and personal brands looking to establish their online presence.</p>
                     <ul class="features">
-                        <li><i class="fas fa-check-circle"></i> 5 Custom Web Pages</li>
+                        <li><i class="fas fa-check-circle"></i> 1-2 Custom Web Pages</li>
                         <li><i class="fas fa-check-circle"></i> Responsive Design</li>
                         <li><i class="fas fa-check-circle"></i> Basic SEO Setup</li>
                         <li><i class="fas fa-check-circle"></i> Contact Form</li>
@@ -630,10 +366,10 @@
                 <!-- Package 2 (Popular) -->
                 <div class="package popular">
                     <h3>Professional</h3>
-                    <div class="price">$2,499 <span>/ one-time</span></div>
+                    <div class="price">$999 <span>/ one-time</span></div>
                     <p>Ideal for growing businesses needing advanced features and marketing integration.</p>
                     <ul class="features">
-                        <li><i class="fas fa-check-circle"></i> 10 Custom Web Pages</li>
+                        <li><i class="fas fa-check-circle"></i> 5 Custom Web Pages</li>
                         <li><i class="fas fa-check-circle"></i> CMS Integration</li>
                         <li><i class="fas fa-check-circle"></i> Advanced SEO</li>
                         <li><i class="fas fa-check-circle"></i> Social Media Integration</li>
@@ -651,6 +387,11 @@
                     <ul class="features">
                         <li><i class="fas fa-check-circle"></i> Unlimited Pages</li>
                         <li><i class="fas fa-check-circle"></i> Custom Web Application</li>
+                        <li><i class="fas fa-check-circle"></i> Advanced E-commerce</li>
+                        <li><i class="fas fa-check-circle"></i> API Integrations</li>
+                        <li><i class="fas fa-check-circle"></i> Premium Hosting Setup</li>
+                        <li><
+                        <li><i class="fas fa-check-circle"></i> Custom Web Application</li>
                         <li><i class="fas fa-check-circle"></i> Full E-commerce Solution</li>
                         <li><i class="fas fa-check-circle"></i> Digital Marketing Strategy</li>
                         <li><i class="fas fa-check-circle"></i> Premium Hosting Setup</li>
@@ -661,6 +402,145 @@
             </div>
         </div>
     </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Portfolio</h2>
+                <p>Showcasing some of my recent projects and work</p>
+            </div>
+            
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Design</button>
+                <button class="filter-btn" data-filter="app">Web App</button>
+                <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+            </div>
+            
+            <div class="portfolio-grid">
+                <!-- Project 1 -->
+                <div class="portfolio-item" data-category="web">
+                    <img src="https://res.cloudinary.com/dqtsr6waw/image/upload/t_port/drashoha_audgim" alt="Project 1" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Business Website</h3>
+                        <p>A modern responsive website for a consulting firm with CMS integration.</p>
+                        <div class="portfolio-links">
+                            <a href=""><i class="fas fa-link"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="portfolio-item" data-category="app">
+                    <img src="https://res.cloudinary.com/dqtsr6waw/image/upload/t_thelaw/law_firm_r0nzdd" alt="Project 2" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Law Firm Website</h3>
+                        <p>React-based application with Firebase backend for team collaboration.</p>
+                        <div class="portfolio-links">
+                            <a href="#"><i class="fas fa-link"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="portfolio-item" data-category="ecommerce">
+                    <img src="https://res.cloudinary.com/dqtsr6waw/image/upload/v1748857645/eco_ur6ckh.avif" alt="Project 3" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Online Store</h3>
+                        <p>E-commerce platform with payment gateway integration and inventory management.</p>
+                        <div class="portfolio-links">
+                            <a href="#"><i class="fas fa-link"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+	
+<!-- Reviews Section -->
+<section class="reviews" id="reviews">
+    <div class="container">
+        <div class="section-title">
+            <h2>Client Testimonials</h2>
+            <p>What my clients say about my work</p>
+        </div>
+        
+        <div class="reviews-container">
+            <div class="reviews-track">
+                <!-- Review Items will be duplicated by JavaScript -->
+                <div class="review-item">
+                    <div class="review-content">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p>Azizul created an outstanding website for my dental practice. The online appointment system increased my patient bookings by 40%. Highly professional!</p>
+                        <div class="review-author">
+                            <h4>Dr. Joynal Abedin</h4>
+                            <span>Dentist</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="review-item">
+                    <div class="review-content">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p>Our orthodontics clinic's website is modern, user-friendly and SEO optimized. Significant increase in new patient inquiries since launch.</p>
+                        <div class="review-author">
+                            <h4>Dr. A. Sohag Mallick</h4>
+                            <span>Orthodontics Specialist</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="review-item">
+                    <div class="review-content">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p>As an ENT specialist, I needed professional website. Azizul delivered beyond expectations with excellent functionality and clean design.</p>
+                        <div class="review-author">
+                            <h4>Prof. Dr. Delwar Mamun</h4>
+                            <span>ENT Specialist</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="review-item">
+                    <div class="review-content">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p>The Legal Sanctuary's website redesign transformed our online presence. The case management system integration works flawlessly.</p>
+                        <div class="review-author">
+                            <h4>The Legal Sanctuary</h4>
+                            <span>Law Firm</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="review-item">
+                    <div class="review-content">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p>Azizul understood our legal firm's needs perfectly. The website is not just beautiful but also highly functional with client portal.</p>
+                        <div class="review-author">
+                            <h4>The Jurist BD</h4>
+                            <span>Law Firm</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="review-item">
+                    <div class="review-content">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p>Smart Lawyer Team's website helped us attract high-value clients. The blog section generates consistent leads every month.</p>
+                        <div class="review-author">
+                            <h4>Smart Lawyer Team</h4>
+                            <span>Law Firm</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- CTA Section -->
     <section class="cta-section">
@@ -680,6 +560,17 @@
                 <h2>Get In Touch</h2>
                 <p>Have a project in mind? Let's work together to bring your vision to life.</p>
             </div>
+			<div class="contact-buttons">
+				<!-- Messenger Button -->
+				<a href="https://m.me/101961648701381" class="messenger-btn" target="_blank">
+					<i class="fab fa-facebook-messenger"></i> Message on Messenger
+				</a>
+				
+				<!-- WhatsApp Button -->
+				<a href="https://wa.me/8801943181939" class="whatsapp-btn" target="_blank">
+					<i class="fab fa-whatsapp"></i> Chat on WhatsApp
+				</a>
+			</div>
             
             <div class="contact-container">
                 <div class="contact-info">
@@ -689,7 +580,7 @@
                         </div>
                         <div class="contact-text">
                             <h4>Email Me</h4>
-                            <a href="mailto:hello@mdazizulhoque.click">hello@mdazizulhoque.click</a>
+                            <a href="mailto:azizulhaque1939@gmail.com">azizulhaque1939@gmail.com</a>
                         </div>
                     </div>
                     
@@ -699,7 +590,7 @@
                         </div>
                         <div class="contact-text">
                             <h4>Location</h4>
-                            <p>Serving clients across the United States</p>
+                            <p>Bahirab, Sylhet Busstand, Dhaka, Bangladesh</p>
                         </div>
                     </div>
                     
@@ -759,14 +650,14 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <a href="#" class="logo">azizul<span>.</span></a>
-                <p>Premium Web Design & Marketing Solutions for the US Market</p>
+                <a href="#" class="logo">Aziz<span>.</span></a>
+                <p>Premium Web Design & Development Solutions Ideal for medical, legal, and consulting practices.</p>
                 
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-dribbble"></i></a>
-                    <a href="#"><i class="fab fa-behance"></i></a>
+                    <a href="https://linkedin.com/in/azizi02" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.fb.com/mdazizulhoquenur" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="http://www.mdazizulhoque.click" target="_blank"><i class="fas fa-globe"></i></a>
+                    <a href="https://github.com/Azizul102" target="_blank"><i class="fab fa-github"></i></a>
                 </div>
                 
                 <div class="copyright">
@@ -776,28 +667,7 @@
         </div>
     </footer>
     
-    <script>
-        // Form submission handling
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Simulate form submission (in a real site, this would be handled by Netlify)
-            setTimeout(function() {
-                document.getElementById('contactForm').style.display = 'none';
-                document.getElementById('thankYou').style.display = 'block';
-            }, 1000);
-        });
-        
-        // Smooth scrolling for navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+    
+	<script src="slider.js" defer></script>
 </body>
 </html>
