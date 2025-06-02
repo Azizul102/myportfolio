@@ -121,15 +121,6 @@ nav {
 nav.active {
     left: 0; /* Bring into view from left */
 }
-
-/* Optional: Add close button styling if needed */
-.mobile-menu-btn.active i.fa-times {
-    position: fixed;
-    left: calc(80% - 40px);
-    top: 20px;
-    z-index: 1001;
-}
-
 /* Hero Section */
 .hero {
     min-height: 100vh;
