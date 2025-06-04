@@ -129,17 +129,33 @@ specCard.addEventListener('mouseleave', () => {
             });
         });
         
-        // Form submission handling
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Simulate form submission (in a real site, this would be handled by Netlify)
-            setTimeout(function() {
-                document.getElementById('contactForm').style.display = 'none';
-                document.getElementById('thankYou').style.display = 'block';
-            }, 1000);
-        });
+        document.addEventListener("DOMContentLoaded", function () {
+          const form = document.getElementById("contactForm");
+          const thankYou = document.getElementById("thankYou");
         
+          if (form) {
+            form.addEventListener("submit", function (event) {
+              event.preventDefault();
+        
+              const formData = new FormData(form);
+        
+              fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString()
+              })
+                .then(() => {
+                  form.style.display = "none";
+                  thankYou.style.display = "block";
+                })
+                .catch((error) => {
+                  alert("There was a problem submitting the form. Please try again.");
+                  console.error(error);
+                });
+            });
+          }
+        });
+
         // Download CV button
         document.getElementById('downloadCvBtn').addEventListener('click', function(e) {
             e.preventDefault();
