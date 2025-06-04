@@ -1,0 +1,18 @@
+backend:
+  name: git-gateway
+  branch: main  # আপনার রিপোর ডিফল্ট ব্রাঞ্চ
+
+media_folder: "blog/images"          # ব্লগ ইমেজ সেভ করার লোকেশন
+public_folder: "/blog/images"       # ওয়েবসাইটে ইমেজ এক্সেস পাথ
+
+collections:
+  - name: "blog"                   # ব্লগ কালেকশন
+    label: "Blog Posts"            # CMS-এ দেখাবে
+    folder: "blog"                 # ব্লগ মার্কডাউন ফাইলগুলোর পাথ
+    create: false                  # নতুন ব্লগ ক্রিয়েট বন্ধ (শুধু এডিট)
+    slug: "{{slug}}"               # URL ফরম্যাট
+    fields:
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "date", label: "Date", widget: "datetime" }
+      - { name: "image", label: "Featured Image", widget: "image" }
+      - { name: "body", label: "Content", widget: "markdown" }
